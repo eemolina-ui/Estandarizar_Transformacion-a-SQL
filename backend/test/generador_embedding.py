@@ -1,3 +1,5 @@
+import os
+
 from openai import AzureOpenAI
 from qdrant_client import QdrantClient
 
@@ -7,7 +9,7 @@ QDRANT_URL = "http://localhost:6333"
 COLLECTION = "asistente_corporativo"
 
 client = AzureOpenAI(
-    api_key="5Ii96AvSXS8KjcOScYaKaWo9LbXz2nxF0gZZZCIABoTz6eODX5PcJQQJ99BKACYeBjFXJ3w3AAAAACOGdgmk",
+    api_key= os.environ.get('AZUREOPENAI_API_KEY'),
     azure_endpoint="https://goed-avatar-foundry.cognitiveservices.azure.com/",
     api_version="2024-12-01-preview"
 )
